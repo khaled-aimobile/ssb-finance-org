@@ -457,7 +457,9 @@
                                         </ul>
                                     </li>
                                     @endif
-
+                                     <li class="dash-item {{ (request()->is('account-assets*') ? 'active' : '')}}">
+                                            <a class="dash-link" href="{{route('fixedasset.index')}}">{{__('Fixed Asset Setup ')}}</a>      
+                                        </li> 
                                     @can('manage event')
                                         <li class="dash-item {{ (request()->is('event*') ? 'active' : '')}}">
                                             <a class="dash-link" href="{{route('event.index')}}">{{__('Event Setup')}}</a>
