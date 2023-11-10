@@ -32,7 +32,7 @@ class EmployeeController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function index()
     {
         if(\Auth::user()->can('manage employee'))
@@ -42,13 +42,13 @@ class EmployeeController extends Controller
                 $employees = Employee::where('user_id', '=', Auth::user()->id)->get();
             }
             else
-            {
+            { 
                 $employees = Employee::where('created_by', \Auth::user()->creatorId())->get();
             }
 
             return view('employee.index', compact('employees'));
         }
-        else
+        else 
         {
             return redirect()->back()->with('error', __('Permission denied.'));
         }

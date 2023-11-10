@@ -454,10 +454,12 @@
                                                     <a class="dash-link" href="{{route('holiday.index')}}">{{__('Holidays')}}</a>
                                                 </li>
                                             @endcan
-                                        </ul>
+                                        </ul>   
                                     </li>
-                                    @endif
-
+                                    @endif 
+                                    <li class="dash-item {{ (request()->is('account-assets*') ? 'active' : '')}}">
+                                            <a class="dash-link" href="{{route('fixedasset.index')}}">{{__('Fixed Asset Setup ')}}</a>      
+                                        </li>     
                                     @can('manage event')
                                         <li class="dash-item {{ (request()->is('event*') ? 'active' : '')}}">
                                             <a class="dash-link" href="{{route('event.index')}}">{{__('Event Setup')}}</a>
@@ -473,6 +475,7 @@
                                             <a class="dash-link" href="{{route('account-assets.index')}}">{{__('Employees Asset Setup ')}}</a>
                                         </li>
                                     @endcan
+                                  
                                     @can('manage document')
                                         <li class="dash-item {{ (request()->is('document-upload*') ? 'active' : '')}}">
                                             <a class="dash-link" href="{{route('document-upload.index')}}">{{__('Document Setup')}}</a>
