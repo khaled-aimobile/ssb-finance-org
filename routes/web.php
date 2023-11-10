@@ -793,7 +793,7 @@ Route::get('termination/{id}/description', [TerminationController::class, 'descr
 Route::resource('terminationtype', TerminationTypeController::class)->middleware(['auth', 'XSS']);
 
 Route::post('announcement/getdepartment', [AnnouncementController::class, 'getdepartment'])->name('announcement.getdepartment');
-Route::post('announcement/getemployee', [AnnouncementController::class, 'getemployee'])->name('announcement.getemployee');
+Route::post('announcement/getemployee', [AnnouncementController::class, 'getemployee'])->name('announcement.getemployee');  
 Route::resource('announcement', AnnouncementController::class)->middleware(['auth', 'XSS']);
 
 Route::resource('holiday', HolidayController::class)->middleware(['auth', 'XSS']);

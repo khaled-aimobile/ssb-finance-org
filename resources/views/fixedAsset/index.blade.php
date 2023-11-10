@@ -383,8 +383,8 @@
 				Warranty code :<p id="detail_asset_warranty_code"></p> <br>
 			</div>
 		  </div>
-		  <div class="row">
-			<div class="col-md-6">
+		  <div class="row">   
+			<div class="col-md-6"> 
 				Warranty start date :<p id="detail_asset_warranty_start_date"></p> <br>
 			</div>
 			<div class="col-md-6">

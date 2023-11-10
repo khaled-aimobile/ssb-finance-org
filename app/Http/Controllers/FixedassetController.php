@@ -37,10 +37,10 @@ class FixedassetController extends Controller
     public function fetch(FixedAsset $asset)
     {   
         $assets = FixedAsset::all();
-        $data = '';     
+        $data = '';      
  
         if ($assets) {
-            foreach ($assets as $asset) {
+            foreach ($assets as $asset) {  
                 $data .= '<tr>
                     <td>' . $asset['id'] . '</td>
                     <td>' . $asset['name'] . '</td>
