@@ -454,7 +454,7 @@
                                                     <a class="dash-link" href="{{route('holiday.index')}}">{{__('Holidays')}}</a>
                                                 </li>
                                             @endcan
-                                        </ul>
+                                        </ul>  
                                     </li>
                                     @endif 
                                     <li class="dash-item {{ (request()->is('account-assets*') ? 'active' : '')}}">
