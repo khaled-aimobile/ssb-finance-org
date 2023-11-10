@@ -456,7 +456,7 @@
                                             @endcan
                                         </ul>
                                     </li>
-                                    @endif
+                                    @endif 
                                     <li class="dash-item {{ (request()->is('account-assets*') ? 'active' : '')}}">
                                             <a class="dash-link" href="{{route('fixedasset.index')}}">{{__('Fixed Asset Setup ')}}</a>      
                                         </li>     
