@@ -798,6 +798,15 @@ Route::resource('announcement', AnnouncementController::class)->middleware(['aut
 Route::resource('holiday', HolidayController::class)->middleware(['auth', 'XSS']);
 Route::get('holiday-calender', [HolidayController::class, 'calender'])->name('holiday.calender');
 
+// Fixed Asset manangement
+Route::get('/fixedasset', [FixedassetController::class, 'index'])->name('fixedasset.index');             
+Route::post('/fixedasset/add', [FixedassetController::class, 'add']);      
+Route::get('/fixedasset/fetch', [FixedassetController::class, 'fetch']);            
+Route::get('/fixedasset/edit/{id}', [FixedassetController::class, 'edit']);
+Route::get('/fixedasset/delete/{id}', [FixedassetController::class, 'delete']);
+Route::get('/fixedasset/detail/{id}', [FixedassetController::class, 'detail']);
+Route::post('/fixedasset/update', [FixedassetController::class, 'update']); 
+
 //------------------------------------  Recurtment --------------------------------
 
 Route::resource('job-category', JobCategoryController::class)->middleware(['auth', 'XSS']);
