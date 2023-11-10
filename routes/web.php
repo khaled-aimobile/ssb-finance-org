@@ -130,7 +130,8 @@ use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\WarehouseTransferController;
 use App\Http\Controllers\WarningController;
 use App\Http\Controllers\ZoomMeetingController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FixedassetController;
+use Illuminate\Support\Facades\Route;    
 
 /*
 |--------------------------------------------------------------------------
@@ -696,7 +697,7 @@ Route::post('branch/employee/json', [EmployeeController::class, 'employeeJson'])
 Route::get('employee-profile', [EmployeeController::class, 'profile'])->name('employee.profile')->middleware(['auth', 'XSS']);
 Route::get('show-employee-profile/{id}', [EmployeeController::class, 'profileShow'])->name('show.employee.profile')->middleware(['auth', 'XSS']);
 
-Route::get('lastlogin', [EmployeeController::class, 'lastLogin'])->name('lastlogin')->middleware(['auth', 'XSS']);
+Route::get('lastlogin', [EmployeeController::class, 'lastLogin'])->name('lastlogin')->middleware(['auth', 'XSS']); 
 
 Route::resource('employee', EmployeeController::class)->middleware(['auth', 'XSS']);
 
@@ -797,7 +798,16 @@ Route::resource('announcement', AnnouncementController::class)->middleware(['aut
 
 Route::resource('holiday', HolidayController::class)->middleware(['auth', 'XSS']);
 Route::get('holiday-calender', [HolidayController::class, 'calender'])->name('holiday.calender');
-
+      
+// Fixed Asset manangement
+Route::get('/fixedasset', [FixedassetController::class, 'index'])->name('fixedasset.index');             
+Route::post('/fixedasset/add', [FixedassetController::class, 'add']);      
+Route::get('/fixedasset/fetch', [FixedassetController::class, 'fetch']);            
+Route::get('/fixedasset/edit/{id}', [FixedassetController::class, 'edit']);
+Route::get('/fixedasset/delete/{id}', [FixedassetController::class, 'delete']);
+Route::get('/fixedasset/detail/{id}', [FixedassetController::class, 'detail']);
+Route::post('/fixedasset/update', [FixedassetController::class, 'update']); 
+            
 //------------------------------------  Recurtment --------------------------------
 
 Route::resource('job-category', JobCategoryController::class)->middleware(['auth', 'XSS']);
